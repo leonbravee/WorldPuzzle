@@ -42,12 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\_Project\Scripts\Template\DragDrop.cs" />
+     <Compile Include="Assets\_Project\Scripts\LevelDatas\Position.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Test.cs" />
+     <Compile Include="Assets\_Project\Scripts\LevelDatas\LevelData.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
-     <Compile Include="Assets\_Project\Scripts\LevelDatas\LevelData.cs" />
-     <Compile Include="Assets\_Project\Scripts\LevelDatas\Position.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\Tile.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
