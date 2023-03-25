@@ -43,7 +43,6 @@
   <ItemGroup>
      <Compile Include="Assets\_Project\Scripts\Template\DragDrop.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\Position.cs" />
-     <Compile Include="Assets\_Project\Scripts\Template\Test.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\LevelData.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
@@ -57,6 +56,9 @@
      <Compile Include="Assets\_Project\Scripts\CanvasController.cs" />
      <Compile Include="Assets\_Project\Scripts\Answer\AnswerHandler.cs" />
      <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />
+     <Compile Include="Assets\_Project\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\_Project\Scripts\Placement\PlacementTrigger.cs" />
+     <Compile Include="Assets\_Project\Scripts\Placement\PlaceSlot.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
@@ -80,6 +82,7 @@
      <Folder Include="Assets\_Project\Scripts\TileObject" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates" />
+     <Folder Include="Assets\_Project\Scripts\Placement" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\_Project\Prefabs\_Game" />

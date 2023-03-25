@@ -62,10 +62,11 @@ namespace LeonBrave
 					Physics.Raycast(ray, out hit, Mathf.Infinity, _dragLayer);
 					Physics.Raycast(ray, out hitGround, Mathf.Infinity, _groundLayer);
 
-					if (hit.collider != null  && Input.GetMouseButtonDown(0))
+					if (hit.collider != null  && Input.GetMouseButtonDown(0)  && hit.transform.TryGetComponent(out TileObject tileObject) && tileObject!=null && tileObject.TileObjectState==TileObjectState.Selectable)
 					{
 						_isDragging = true;
 						_dragGameObject = hit.collider.gameObject;
+						tileObject.TileObjectState = TileObjectState.Selected;
 					}
 
 					if (_dragGameObject == null || hitGround.collider == null)
@@ -98,10 +99,11 @@ namespace LeonBrave
 						RaycastHit hit;
 
 						Physics.Raycast(ray, out hit, Mathf.Infinity, _dragLayer);
-						if(hit.collider!=null)
+						if(hit.collider!=null &&  hit.transform.TryGetComponent(out TileObject tileObject) && tileObject!=null && tileObject.TileObjectState==TileObjectState.Selectable) 
 						{
 							_dragGameObject = hit.collider.gameObject;
 							_isDragging = true;
+							tileObject.TileObjectState = TileObjectState.Selected;
 						}
 						
 						

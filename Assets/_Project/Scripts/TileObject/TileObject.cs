@@ -9,6 +9,8 @@ public class TileObject : MonoBehaviour
 {
     [SerializeField] private TileObjectData _properties;
 
+    private Vector3 _firstPos;
+
     public TileLevelData TileLevelData
     {
         set { _properties.TileLevelData = value; }
@@ -22,11 +24,15 @@ public class TileObject : MonoBehaviour
 
             if (value == TileObjectState.UnSelectable)
             {
-                transform.GetComponent<MeshRenderer>().material.color = _properties.UnSelectableColor;
+               _properties.TileRenderer.material.color = _properties.UnSelectableColor;
             }
             else if (value == TileObjectState.Selectable)
             {
-                transform.GetComponent<MeshRenderer>().material.color = _properties.SelectableColor;
+                _properties.TileRenderer.material.color = _properties.SelectableColor;
+            }
+            else if (value == TileObjectState.Selected)
+            {
+                OnSelected();
             }
         }
         get
@@ -56,25 +62,28 @@ public class TileObject : MonoBehaviour
         gameObject.name = "" + _properties.TileLevelData.Id;
         transform.localPosition = _properties.TileLevelData.Position.WorldPosition;
         _properties.TileText.text = _properties.TileLevelData.Character;
+        _firstPos = _properties.TileLevelData.Position.WorldPosition;
     }
 
-    private void OnMouseDown()
+    private void OnSelected()
     {
         if(_properties.TileObjectState==TileObjectState.UnSelectable) return;
         
-        transform.GetComponent<MeshRenderer>().material.color = Color.green;
+        _properties.TileRenderer.material.DOColor(_properties.SelectedColor, _properties.ColorChangeTime);
+        PlayerController.Instance.SelectedTileObject = this;
+
 
     }
 
-    private void OnMouseUp()
+    public void TouchUp()
     {
-        if (_properties.TileObjectState == TileObjectState.UnSelectable)
-        {
-            transform.GetComponent<MeshRenderer>().material.color = _properties.UnSelectableColor;
-        }
-        else if (_properties.TileObjectState == TileObjectState.Selectable)
-        {
-            transform.GetComponent<MeshRenderer>().material.color = _properties.SelectableColor;
-        }
+        _properties.TileObjectState = TileObjectState.Selectable;
+        
+        
+        _properties.TileRenderer.material.DOColor(_properties.SelectableColor, _properties.ColorChangeTime);
+
+        transform.DOLocalMove(_firstPos, _properties.MoveToFirstPosTime);
     }
+    
+    
 }

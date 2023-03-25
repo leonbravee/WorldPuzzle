@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6077759268813987568}
   - component: {fileID: 6077759268813987569}
   - component: {fileID: 3966159189222874142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TileObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,9 +113,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _properties:
     TileObjectState: 0
+    ColorChangeTime: 0.25
     SelectableColor: {r: 1, g: 1, b: 1, a: 0}
     UnSelectableColor: {r: 0.5849056, g: 0.56007475, b: 0.56007475, a: 0}
+    SelectedColor: {r: 0.32664153, g: 0.9056604, b: 0.03844783, a: 0}
+    PlacedColor: {r: 0.41509432, g: 0.40530434, b: 0.40530434, a: 0}
     TileText: {fileID: 6077759269266263657}
+    TileRenderer: {fileID: 6077759268813987568}
 --- !u!1 &6077759269266263659
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +131,7 @@ GameObject:
   - component: {fileID: 6077759269266263658}
   - component: {fileID: 6077759269266263656}
   - component: {fileID: 6077759269266263657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TileObjectText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
