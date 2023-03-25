@@ -46,27 +46,54 @@
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
+     <Compile Include="Assets\_Project\Scripts\LevelDatas\LevelData.cs" />
+     <Compile Include="Assets\_Project\Scripts\LevelDatas\Position.cs" />
+     <Compile Include="Assets\_Project\Scripts\LevelDatas\Tile.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
      <Folder Include="Assets\_Project" />
+     <None Include="Assets\Resources\Levels\level_20.json" />
      <Folder Include="Assets\Resources" />
+     <None Include="Assets\Resources\Levels\level_9.json" />
      <Folder Include="Assets\Other" />
+     <Folder Include="Assets\Resources\Levels" />
+     <None Include="Assets\Resources\Levels\level_5.json" />
+     <None Include="Assets\Resources\Levels\level_18.json" />
      <Folder Include="Assets\_Project\Scripts\Template" />
+     <None Include="Assets\Resources\Levels\level_15.json" />
+     <None Include="Assets\Resources\Levels\level_6.json" />
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates" />
      <Folder Include="Assets\_Project\Prefabs\_Game" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\EmptyClass.cs.txt" />
+     <None Include="Assets\Resources\Levels\level_12.json" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyPoolScript.cs.txt" />
      <Folder Include="Assets\Other\CreateClasses" />
+     <None Include="Assets\Resources\Levels\level_7.json" />
+     <None Include="Assets\Resources\Levels\level_14.json" />
+     <None Include="Assets\Resources\Levels\level_1.json" />
+     <None Include="Assets\Resources\Levels\level_13.json" />
+     <None Include="Assets\Resources\Levels\level_17.json" />
      <Folder Include="Assets\_Project\Prefabs" />
+     <None Include="Assets\Resources\Levels\level_8.json" />
+     <Folder Include="Assets\StreamingAssets" />
+     <None Include="Assets\Resources\Levels\level_4.json" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\Enum.cs.txt" />
+     <None Include="Assets\Resources\Levels\level_2.json" />
+     <None Include="Assets\Resources\Levels\level_3.json" />
+     <None Include="Assets\Resources\Levels\level_16.json" />
+     <None Include="Assets\Resources\Levels\level_11.json" />
      <Folder Include="Assets\_Project\Materials" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\Struct.cs.txt" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\Interface.cs.txt" />
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts" />
+     <None Include="Assets\Resources\Levels\level_10.json" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptySingletonScript.cs.txt" />
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts" />
+     <None Include="Assets\StreamingAssets\Level1Json.txt" />
      <Folder Include="Assets\_Project\Scenes" />
      <Folder Include="Assets\_Project\Scripts" />
+     <None Include="Assets\Resources\Levels\level_19.json" />
+     <Folder Include="Assets\_Project\Scripts\LevelDatas" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -312,6 +339,9 @@
      </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>C:\Users\Ramo\Documents\GitHub\WorldPuzzle\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\Ramo\Documents\GitHub\WorldPuzzle\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.1.0\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
