@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
@@ -59,7 +60,24 @@ public class TileBuilder : MonoBehaviour
 			}
 			tileObject.gameObject.SetActive(true);
 		}
+		AnswerHandler.BuildAnswerLibrary();
         
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Debug.LogError(AnswerHandler.IsStringInList("cable"));
+		}
+		else if (Input.GetKeyDown(KeyCode.W))
+		{
+			Debug.LogError(AnswerHandler.IsStringInList("water"));
+		}
+		else if (Input.GetKeyDown(KeyCode.S))
+		{
+			Debug.LogError(AnswerHandler.IsStringInList("expensive"));
+		}
 	}
 
 	public TileObject GetTileObjectFromId(int id)

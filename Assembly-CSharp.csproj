@@ -55,6 +55,8 @@
      <Compile Include="Assets\_Project\Scripts\TileBuilder.cs" />
      <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectState.cs" />
      <Compile Include="Assets\_Project\Scripts\CanvasController.cs" />
+     <Compile Include="Assets\_Project\Scripts\Answer\AnswerHandler.cs" />
+     <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
@@ -64,6 +66,7 @@
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\_Project\Scripts\Answer" />
      <None Include="Assets\Resources\Levels\level_9.json" />
      <Folder Include="Assets\Other" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
