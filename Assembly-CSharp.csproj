@@ -43,7 +43,6 @@
   <ItemGroup>
      <Compile Include="Assets\_Project\Scripts\Template\DragDrop.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Test.cs" />
-     <Compile Include="Assets\_Project\Scripts\Template\StackController.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
@@ -58,7 +57,6 @@
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\EmptyClass.cs.txt" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyPoolScript.cs.txt" />
      <Folder Include="Assets\Other\CreateClasses" />
-     <Folder Include="Assets\_Project\Prefabs\Mechanics" />
      <Folder Include="Assets\_Project\Prefabs" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts\Enum.cs.txt" />
      <Folder Include="Assets\_Project\Materials" />
