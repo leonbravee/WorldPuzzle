@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,4 +6,35 @@ using UnityEngine;
 public class PlacementTrigger : MonoBehaviour
 {
 
+    public static PlacementTrigger Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    [SerializeField]
+    private List<Transform> _placeSlots;
+
+    private int _placedIndex = -1;
+
+    public int PlacedIndex
+    {
+        get
+        {
+            return _placedIndex;
+        }
+        set
+        {
+            _placedIndex = value;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tile") && other.TryGetComponent(out TileObject tileObject) && tileObject.TileObjectState==TileObjectState.Selected)
+        {
+            _placedIndex++;
+            tileObject.Place(_placeSlots[_placedIndex]);
+        }
+    }
 }

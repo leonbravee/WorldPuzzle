@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3966159189222874142}
   m_Layer: 7
   m_Name: TileObject
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6077759268813987570}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -114,6 +114,7 @@ MonoBehaviour:
   _properties:
     TileObjectState: 0
     ColorChangeTime: 0.25
+    MoveToFirstPosTime: 0.25
     SelectableColor: {r: 1, g: 1, b: 1, a: 0}
     UnSelectableColor: {r: 0.5849056, g: 0.56007475, b: 0.56007475, a: 0}
     SelectedColor: {r: 0.32664153, g: 0.9056604, b: 0.03844783, a: 0}

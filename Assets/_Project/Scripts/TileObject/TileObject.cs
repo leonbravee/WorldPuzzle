@@ -7,13 +7,26 @@ using UnityEngine;
 
 public class TileObject : MonoBehaviour
 {
-    [SerializeField] private TileObjectData _properties;
+    [SerializeField] 
+    private TileObjectData _properties;
 
     private Vector3 _firstPos;
 
     public TileLevelData TileLevelData
     {
-        set { _properties.TileLevelData = value; }
+        set
+        {
+            _properties.TileLevelData = value;
+        }
+        
+    }
+
+    public Char TileChar
+    {
+        get
+        {
+           return _properties.TileLevelData.Character[0];
+        }
     }
 
     public TileObjectState TileObjectState
@@ -77,12 +90,22 @@ public class TileObject : MonoBehaviour
 
     public void TouchUp()
     {
+        if(_properties.TileObjectState==TileObjectState.Placed) return;
+        
         _properties.TileObjectState = TileObjectState.Selectable;
         
         
         _properties.TileRenderer.material.DOColor(_properties.SelectableColor, _properties.ColorChangeTime);
 
         transform.DOLocalMove(_firstPos, _properties.MoveToFirstPosTime);
+    }
+
+    public void Place(Transform placeSlotTransform)
+    {
+        _properties.TileObjectState = TileObjectState.Placed;
+        transform.DOLocalMove(placeSlotTransform.position, .35f);
+        LeonBrave.DragDrop.Instance.CanDrag = false;
+        PlayerController.Instance.AddPlacedObject(this);
     }
     
     

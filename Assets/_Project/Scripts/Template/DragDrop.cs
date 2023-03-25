@@ -37,6 +37,11 @@ namespace LeonBrave
 			set
 			{
 				_canDrag = value;
+				if (!value)
+				{
+					_dragGameObject = null;
+					_isDragging = false;
+				}
 			}
 		}
 		private bool _isDragging = false;

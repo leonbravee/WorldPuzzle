@@ -49,6 +49,8 @@ public static class AnswerHandler
 
 	public static bool IsStringInList(string word)
 	{
+		if (word.Length < 3) return false;
+		
 		return GetAnswerLibrary(LetterToId(word[0])).IsStringInList(word);
 	}
 

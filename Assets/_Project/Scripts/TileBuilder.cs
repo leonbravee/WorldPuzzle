@@ -68,7 +68,7 @@ public class TileBuilder : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			Debug.LogError(AnswerHandler.IsStringInList("cable"));
+			Debug.LogError(AnswerHandler.IsStringInList("lbcae"));
 		}
 		else if (Input.GetKeyDown(KeyCode.W))
 		{
