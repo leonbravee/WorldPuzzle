@@ -1,3 +1,5 @@
+using UnityEngine;
+
 [System.Serializable]
 public class Position
 {
@@ -33,7 +35,7 @@ public class Position
 
     private float _z=0f;
 
-    public float Zvalue
+    public float Z
     {
         set
         {
@@ -42,6 +44,14 @@ public class Position
         get
         {
             return _z;
+        }
+    }
+
+    public Vector3 WorldPosition
+    {
+        get
+        {
+            return new Vector3(_x, _y, _z);
         }
     }
 }

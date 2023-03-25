@@ -4,5 +4,5 @@ using System.Collections.Generic;
 public class LevelData
 {
     public string title { get; set; }
-    public List<Tile> tiles { get; set; }
+    public List<TileLevelData> tiles { get; set; }
 }
