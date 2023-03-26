@@ -22,14 +22,10 @@ public class TileBuilder : MonoBehaviour
     [SerializeField] private LevelData _levelData;
 
     private List<TileObject> _tileObjects;
-
-    private void Start()
+    
+    public void BuildLevel(int levelIndex)
     {
-      BuildLevel(1);
-    }
-
-    private void BuildLevel(int levelIndex)
-    {
+        levelIndex++;
         _tileObjects = new List<TileObject>();
         string path = "Levels/level_"+levelIndex;
         TextAsset jsonFile = Resources.Load<TextAsset>(path);
@@ -67,8 +63,6 @@ public class TileBuilder : MonoBehaviour
 
             tileObject.gameObject.SetActive(true);
         }
-
-        AnswerHandler.BuildAnswerLibrary();
     }
 
  

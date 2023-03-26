@@ -7,4 +7,5 @@ public class CanvasControllerData
     public TextMeshProUGUI LevelTitleText;
     public GameObject UndoButtonObject;
     public GameObject DoneButtonObject;
+    public Animator MyAnimator;
 }

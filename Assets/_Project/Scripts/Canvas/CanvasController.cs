@@ -54,4 +54,9 @@ public class CanvasController : MonoBehaviour
 	{
 		PlayerController.Instance.DoneButtonDown();
 	}
+
+	public void SetTrigger(string trigger)
+	{
+		_properties.MyAnimator.SetTrigger(trigger);
+	}
 }

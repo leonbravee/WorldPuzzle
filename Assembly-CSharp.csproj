@@ -61,6 +61,9 @@
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\TileLevelData.cs" />
      <Compile Include="Assets\_Project\Scripts\GameManager.cs" />
+     <Compile Include="Assets\_Project\Scripts\SaveManager\SaveManager.cs" />
+     <Compile Include="Assets\_Project\Scripts\SaveManager\GameSaveState.cs" />
+     <Compile Include="Assets\_Project\Scripts\Canvas\ScrollButton.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
@@ -128,6 +131,7 @@
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Resources\Levels\level_10.json" />
+     <Folder Include="Assets\_Project\Scripts\SaveManager" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptySingletonScript.cs.txt" />
      <Folder Include="Assets\Other\CreateClasses\ClassTemplates\CSharpScripts" />

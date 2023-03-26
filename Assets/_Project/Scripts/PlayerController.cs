@@ -97,9 +97,13 @@ public class PlayerController : MonoBehaviour
 		{
 			placedObject.BlowYourSelf();
 		}
+		
+		_placedObjects.Clear();
 
 		PlacementTrigger.Instance.PlacedIndex = -1;
 		_answerString = "";
+		CanvasController.Instance.SetUndoButton();
+		CanvasController.Instance.SetDoneButton(false);
 	}
 
 

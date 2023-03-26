@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+		AnswerHandler.BuildAnswerLibrary();
 	}
 
-	private GameState _gameState = GameState.Playing;
+	private GameState _gameState = GameState.None;
 
 	public GameState GameState
 	{
@@ -28,6 +29,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	
+
+	public void StartGame(int levelId)
+	{
+		CanvasController.Instance.SetTrigger("Game_IN_OUT");
+		TileBuilder.Instance.BuildLevel(levelId);
+		_gameState = GameState.Playing;
+	}
 
 	private int maxLength;
 	private bool GenerateWords(char[] characters, string currentWord, int index, int maxLength)
