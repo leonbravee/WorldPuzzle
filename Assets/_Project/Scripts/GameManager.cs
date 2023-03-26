@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
 		{
 			CanvasController.Instance.SetTrigger("OUT");
 			SaveManager.Instance.GameSaveState.LastLevel=(_currentLevelId+1);
+			ScoreManager.Instance.ResetScore();
 		}
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameSaveState
 {
-    private List<int> _levelScores = new List<int> { 0, 0, 0, 0 };
+    private List<int> _levelScores;
 
     private int _lastLevel;
     
@@ -13,14 +13,19 @@ public class GameSaveState
     {
         
         _lastLevel = PlayerPrefs.GetInt("LastLevel", 0);
-        string loadedIntArrayString = PlayerPrefs.GetString("LevelScore");
+        string loadedIntArrayString = PlayerPrefs.GetString("LevelScore","0,0,0,0");
+        
+        if(loadedIntArrayString.Length<=1) return;
+        
         string[] loadedIntArrayStrings = loadedIntArrayString.Split(',');
         int[] loadedIntArray = new int[loadedIntArrayStrings.Length];
         
-        if(loadedIntArrayStrings.Length<=1) return;
+       
         
         for (int i = 0; i < loadedIntArrayStrings.Length; i++)
         { 
+            if(loadedIntArrayStrings[i]=="") continue;
+            
             loadedIntArray[i] = int.Parse(loadedIntArrayStrings[i]);
         }
 
@@ -46,8 +51,7 @@ public class GameSaveState
             intArrayString += t+ ",";
         }
         PlayerPrefs.SetString("LevelScore", intArrayString);
-        PlayerPrefs.Save();
-        
+
     }
 
     public int GetLevelScore(int levelId)

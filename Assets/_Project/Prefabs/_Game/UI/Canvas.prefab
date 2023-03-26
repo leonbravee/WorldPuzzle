@@ -1911,6 +1911,7 @@ MonoBehaviour:
   _properties:
     LevelTitleText: {fileID: 4244579890821832688}
     CorrectAnswersText: {fileID: 4244579892380052918}
+    ScoreText: {fileID: 539810818}
     UndoButtonObject: {fileID: 4244579891477531105}
     DoneButtonObject: {fileID: 4244579891602240547}
     MyAnimator: {fileID: 4244579892521513617}

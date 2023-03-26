@@ -79,12 +79,17 @@ public class CanvasController : MonoBehaviour
 
 		_properties.CorrectAnswersText.text = text;
 	}
-
+	
 	public void NextLevelButtonDown()
 	{
 		if(GameManager.Instance.GameState!=GameState.Won) return;
 		
 		SetTrigger("NextLevel");
 		GameManager.Instance.StartGame(SaveManager.Instance.GameSaveState.LastLevel);
+	}
+
+	public void ShowScore(int score)
+	{
+		_properties.ScoreText.text = "Score : " + score;
 	}
 }

@@ -56,7 +56,8 @@ public class ScrollButton : MonoBehaviour
     public void StartButtonDown()
     {
         if(!_canPlayable) return;
-        
+
+        SaveManager.Instance.GameSaveState.LastLevel = _levelId;
        GameManager.Instance.StartGame(_levelId);
     }
     

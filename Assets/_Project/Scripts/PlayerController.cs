@@ -103,11 +103,16 @@ public class PlayerController : MonoBehaviour
 		PlacementTrigger.Instance.PlacedIndex = -1;
 		
 	    CanvasController.Instance.AddCorrectWord(_answerString);
-		CanvasController.Instance.SetUndoButton();
+	    CanvasController.Instance.SetUndoButton();
 		CanvasController.Instance.SetDoneButton(false);
+		
+		Debug.Log(_answerString);
+		ScoreManager.Instance.SetScore(_answerString);
+		ScoreManager.Instance.SaveScore();
+		
 		GameManager.Instance.CheckIsGameEnd();
-
-			_answerString = "";
+		
+		_answerString = "";
 	}
 
 
