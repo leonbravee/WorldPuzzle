@@ -72,22 +72,11 @@ public class GameManager : MonoBehaviour
 		_maxLength = characters.Length;
 		if (_maxLength > 5)
 		{
-			Debug.Log("Game Will Continue");
 			return;
 		}
 		
-		foreach (char c in characters)
+		if (!GenerateWords(characters, "", 0, _maxLength))
 		{
-			Debug.Log(c);
-		}
-	
-		if (GenerateWords(characters, "", 0, _maxLength))
-		{
-			Debug.Log("Game Will Continue");
-		}
-		else
-		{
-			Debug.Log("Game Done");
 			UpdateGameState(GameState.Won);
 		}
 	}
