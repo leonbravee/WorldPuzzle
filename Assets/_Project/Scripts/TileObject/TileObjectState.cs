@@ -6,4 +6,5 @@ public enum TileObjectState
     UnSelectable=2,
     Placed=3,
     Selected=4,
+    Done=5,
 }

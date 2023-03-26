@@ -52,7 +52,7 @@ namespace LeonBrave
 		void Update()
 		{
 			
-			if(!_canDrag) return;
+			if(!_canDrag || GameManager.Instance.GameState!=GameState.Playing) return;
 			
 			if (Application.isEditor)
 			{

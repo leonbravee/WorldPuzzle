@@ -26,6 +26,7 @@ public class CanvasController : MonoBehaviour
 	private void Start()
 	{
 		SetUndoButton();
+		SetDoneButton(AnswerHandler.IsStringInList(""));
 	}
 
 	public void SetLevelTitle(string title)
@@ -47,5 +48,10 @@ public class CanvasController : MonoBehaviour
 	public void SetDoneButton(bool value)
 	{
 		_properties.DoneButtonObject.SetActive(value);
+	}
+
+	public void DoneButtonDown()
+	{
+		PlayerController.Instance.DoneButtonDown();
 	}
 }

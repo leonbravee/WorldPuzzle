@@ -107,6 +107,21 @@ public class TileObject : MonoBehaviour
         LeonBrave.DragDrop.Instance.CanDrag = false;
         PlayerController.Instance.AddPlacedObject(this);
     }
+
+    public void BlowYourSelf()
+    {
+        if (_properties.TileLevelData.Children.Count > 0)
+        {
+            foreach (int childId in _properties.TileLevelData.Children)
+            {
+                TileBuilder.Instance.GetTileObjectFromId(childId).TileObjectState = TileObjectState.Selectable;
+            }
+        }
+
+        _properties.TileObjectState = TileObjectState.Done;
+        
+        gameObject.SetActive(false);
+    }
     
     
 }

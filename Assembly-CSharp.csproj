@@ -41,25 +41,26 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Project\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectData.cs" />
+     <Compile Include="Assets\_Project\Scripts\Canvas\CanvasController.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\DragDrop.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\Position.cs" />
+     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectPool.cs" />
+     <Compile Include="Assets\_Project\Scripts\Canvas\CanvasControllerData.cs" />
+     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectState.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\LevelData.cs" />
+     <Compile Include="Assets\_Project\Scripts\TileBuilder.cs" />
+     <Compile Include="Assets\_Project\Scripts\Answer\AnswerHandler.cs" />
+     <Compile Include="Assets\_Project\Scripts\TileObject\TileObject.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
+     <Compile Include="Assets\_Project\Scripts\Placement\PlaceSlot.cs" />
+     <Compile Include="Assets\_Project\Scripts\Placement\PlacementTrigger.cs" />
+     <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\TileLevelData.cs" />
-     <Compile Include="Assets\_Project\Scripts\TileObject\TileObject.cs" />
-     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectData.cs" />
-     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectPool.cs" />
-     <Compile Include="Assets\_Project\Scripts\TileBuilder.cs" />
-     <Compile Include="Assets\_Project\Scripts\TileObject\TileObjectState.cs" />
-     <Compile Include="Assets\_Project\Scripts\Canvas\CanvasController.cs" />
-     <Compile Include="Assets\_Project\Scripts\Answer\AnswerHandler.cs" />
-     <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />
-     <Compile Include="Assets\_Project\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\_Project\Scripts\Placement\PlacementTrigger.cs" />
-     <Compile Include="Assets\_Project\Scripts\Placement\PlaceSlot.cs" />
-     <Compile Include="Assets\_Project\Scripts\Canvas\CanvasControllerData.cs" />
+     <Compile Include="Assets\_Project\Scripts\GameManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />

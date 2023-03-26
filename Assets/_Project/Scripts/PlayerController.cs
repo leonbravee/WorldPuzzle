@@ -11,6 +11,27 @@ public class PlayerController : MonoBehaviour
 	private List<TileObject> _placedObjects;
 
 	private string _answerString;
+	
+		
+	void Awake()
+	{
+		if(Instance == null)
+		{
+			Instance = this;
+		}
+		else if(Instance != this)
+		{
+			Destroy(gameObject);
+		}
+
+		_placedObjects = new List<TileObject>();
+		_answerString = "";
+	}
+	
+	private void Start()
+	{
+		LeonBrave.UserInput.Instance.TouchEvent += Touch;
+	}
 
 	public bool CanUndo
 	{
@@ -55,29 +76,9 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	
-	void Awake()
-	{
-		if(Instance == null)
-		{
-			Instance = this;
-		}
-		else if(Instance != this)
-		{
-			Destroy(gameObject);
-		}
-
-		_placedObjects = new List<TileObject>();
-		_answerString = "";
-	}
-
-	private void Start()
-	{
-		LeonBrave.UserInput.Instance.TouchEvent += Touch;
-	}
-
 	private void Touch(LeonBrave.UserInput.TouchType touchType)
 	{
-		if(_selectedTileObject==null || touchType!=UserInput.TouchType.Up) return;
+		if( GameManager.Instance.GameState!=GameState.Playing || _selectedTileObject==null || touchType!=UserInput.TouchType.Up) return;
 		
 		_selectedTileObject.TouchUp();
 		_selectedTileObject = null;
@@ -88,6 +89,17 @@ public class PlayerController : MonoBehaviour
 	{
 		CanvasController.Instance.SetDoneButton(AnswerHandler.IsStringInList(_answerString));
 
+	}
+
+	public void DoneButtonDown()
+	{
+		foreach (TileObject placedObject in _placedObjects)
+		{
+			placedObject.BlowYourSelf();
+		}
+
+		PlacementTrigger.Instance.PlacedIndex = -1;
+		_answerString = "";
 	}
 
 
