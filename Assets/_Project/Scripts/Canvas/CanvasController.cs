@@ -84,6 +84,7 @@ public class CanvasController : MonoBehaviour
 	{
 		if(GameManager.Instance.GameState!=GameState.Won) return;
 		
+		SetTrigger("NextLevel");
 		GameManager.Instance.StartGame(SaveManager.Instance.GameSaveState.LastLevel);
 	}
 }

@@ -7,8 +7,14 @@ public static class AnswerHandler
 {
 	private static List<AnswerLibrary> _answerLibraries = new List<AnswerLibrary>();
 
+	private static bool _isBuilded = false;
 	public  static  void BuildAnswerLibrary()
 	{
+		
+		if(_isBuilded) return;
+
+		_isBuilded = true;
+		
 		string filePath = Path.Combine(Application.dataPath, "Resources", "en.txt");
 		
 

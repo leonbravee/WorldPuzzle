@@ -64,6 +64,9 @@
      <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\Haptic.cs" />
      <Compile Include="Assets\_Project\Scripts\LevelDatas\TileLevelData.cs" />
+     <Compile Include="Assets\_Project\Scripts\ScoreManager\ScoreData.cs" />
+     <Compile Include="Assets\_Project\Scripts\ScoreManager\ScoreManager.cs" />
+     <Compile Include="Assets\_Project\Scripts\ScoreManager\ScoreManagerData.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\CreateClasses\ClassTemplates\UnityScripts\EmptyScript.cs.txt" />
@@ -115,6 +118,7 @@
      <Folder Include="Assets\_Project\Prefabs" />
      <None Include="Assets\Resources\Levels\level_8.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\_Project\Scripts\ScoreManager" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />

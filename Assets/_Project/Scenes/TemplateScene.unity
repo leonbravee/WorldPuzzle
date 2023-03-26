@@ -397,17 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f48d5ec661714498563f49717a222d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &683822541 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4244579892521513616, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-  m_PrefabInstance: {fileID: 4244579892337112396}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2777a29461fbae4c9a4a17b1d256f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,38 +1003,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 683822541}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevelButtonDown
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CanvasController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435976686, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244579892380052917, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 630
-      objectReference: {fileID: 0}
     - target: {fileID: 4244579892521513623, guid: 3cb3c8a7a0cadc54f871b6f264621f07, type: 3}
       propertyPath: m_Pivot.x
       value: 0
