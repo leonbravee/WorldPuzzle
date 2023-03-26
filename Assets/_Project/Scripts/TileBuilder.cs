@@ -101,5 +101,19 @@ public class TileBuilder : MonoBehaviour
 
         return usefulChars.ToArray();
     }
+    public char[] GetUnUsedTiles()
+    {
+        List<char> usefulChars = new List<char>();
+        foreach (TileObject tileObject in _tileObjects)
+        {
+            if (tileObject.TileObjectState == TileObjectState.Selectable || tileObject.TileObjectState==TileObjectState.UnSelectable)
+            {
+                usefulChars.Add(tileObject.TileChar);
+            }
+        }
+
+        return usefulChars.ToArray();
+    }
+    
     
 }

@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
 	    CanvasController.Instance.SetUndoButton();
 		CanvasController.Instance.SetDoneButton(false);
 		
-		Debug.Log(_answerString);
 		ScoreManager.Instance.SetScore(_answerString);
 		ScoreManager.Instance.SaveScore();
 		

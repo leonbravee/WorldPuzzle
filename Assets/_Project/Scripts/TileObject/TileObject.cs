@@ -111,15 +111,19 @@ public class TileObject : MonoBehaviour
 
     public void BlowYourSelf()
     {
+        _properties.TileObjectState = TileObjectState.Done;
+        
         if (_properties.TileLevelData.Children.Count > 0)
         {
             foreach (int childId in _properties.TileLevelData.Children)
             {
-                TileBuilder.Instance.GetTileObjectFromId(childId).TileObjectState = TileObjectState.Selectable;
+                if (TileBuilder.Instance.GetTileObjectFromId(childId).TileObjectState != TileObjectState.Done)
+                {
+                    TileBuilder.Instance.GetTileObjectFromId(childId).TileObjectState = TileObjectState.Selectable;
+                }
             }
         }
-
-        _properties.TileObjectState = TileObjectState.Done;
+        
         
         gameObject.SetActive(false);
     }

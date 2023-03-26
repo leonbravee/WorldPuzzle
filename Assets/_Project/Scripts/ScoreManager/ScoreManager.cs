@@ -45,6 +45,7 @@ public class ScoreManager : MonoBehaviour
 		_currentScore += earnScore;
 		CanvasController.Instance.ShowScore(_currentScore);
 	}
+	
 
 	public void SaveScore()
 	{
@@ -61,7 +62,14 @@ public class ScoreManager : MonoBehaviour
 	
 	public void AddUnUsedWordsTheScore()
 	{
-		
+		char[] unUsedChars = TileBuilder.Instance.GetUnUsedTiles();
+
+		_currentScore -= unUsedChars.Length * 100;
+		if (_currentScore < 0)
+		{
+			_currentScore = 0;
+		}
+		CanvasController.Instance.ShowScore(_currentScore);
 	}
 
 

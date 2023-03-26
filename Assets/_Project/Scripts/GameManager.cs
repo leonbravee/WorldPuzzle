@@ -1,105 +1,156 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-     
+
 public class GameManager : MonoBehaviour
 {
-	public static GameManager Instance;
-	
-	void Awake()
-	{
-		if(Instance == null)
-		{
-			Instance = this;
-		}
-		else if(Instance != this)
-		{
-			Destroy(gameObject);
-		}
-		AnswerHandler.BuildAnswerLibrary();
-	}
+    public static GameManager Instance;
 
-	private GameState _gameState = GameState.None;
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
 
-	private int _currentLevelId;
+        AnswerHandler.BuildAnswerLibrary();
+    }
 
-	public GameState GameState
-	{
-		get
-		{
-			return _gameState;
-		}
-	}
-	
+    private GameState _gameState = GameState.None;
 
-	public void StartGame(int levelId)
-	{
-		CanvasController.Instance.SetTrigger("Game_IN_OUT");
-		_currentLevelId = levelId;
-		TileBuilder.Instance.BuildLevel(levelId);
-		_gameState = GameState.Playing;
-	}
+    private int _currentLevelId;
 
-	private int _maxLength;
-	private bool GenerateWords(char[] characters, string currentWord, int index, int maxLength)
-	{
-		if (index == maxLength)
-		{
-			if (AnswerHandler.IsStringInList(currentWord))
-			{
-				return true;
-			}
+    public GameState GameState
+    {
+        get { return _gameState; }
+    }
 
-			return false;
-		}
 
-		for (int i = 0; i < characters.Length; i++)
-		{
-			string newWord = currentWord + characters[i];
-			bool found = GenerateWords(characters, newWord, index + 1, maxLength);
-			if (found)
-			{
-				return true;
-			}
-		}
+    public void StartGame(int levelId)
+    {
+        CanvasController.Instance.SetTrigger("Game_IN_OUT");
 
-		return false;
-	}
+        _currentLevelId = levelId;
 
-	public void  CheckIsGameEnd()
-	{
-		char[] characters = TileBuilder.Instance.GetUseFulTiles();
-		_maxLength = characters.Length;
-		if (_maxLength > 5)
-		{
-			return;
-		}
-		
-		if (!GenerateWords(characters, "", 0, _maxLength))
-		{
-			UpdateGameState(GameState.Won);
-		}
-	}
+        TileBuilder.Instance.BuildLevel(levelId);
 
-	private void UpdateGameState(GameState gameState)
-	{
-		if(_gameState==GameState.Won) return;
-		
-		_gameState = gameState;
+        _gameState = GameState.Playing;
+    }
 
-		if (gameState == GameState.Won)
-		{
-			CanvasController.Instance.SetTrigger("OUT");
-			SaveManager.Instance.GameSaveState.LastLevel=(_currentLevelId+1);
-			ScoreManager.Instance.ResetScore();
-		}
-	}
+
+    public void CheckIsGameEnd()
+    {
+        char[] characters = TileBuilder.Instance.GetUseFulTiles();
+
+        string characterString = "";
+
+        foreach (char character in characters)
+        {
+            characterString += character;
+        }
+
+        stopFlag = false;
+        if (!HaveWordInCurrentGame(characterString, ref stopFlag))
+        {
+            UpdateGameState(GameState.Won);
+        }
+    }
+
+    private void UpdateGameState(GameState gameState)
+    {
+        if (_gameState == GameState.Won) return;
+
+        _gameState = gameState;
+
+        if (gameState == GameState.Won)
+        {
+            ScoreManager.Instance.AddUnUsedWordsTheScore();
+            CanvasController.Instance.SetTrigger("OUT");
+            SaveManager.Instance.GameSaveState.LastLevel = (_currentLevelId + 1);
+            ScoreManager.Instance.ResetScore();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stopFlag = false;
+        }
+    }
+
+    private bool stopFlag = false;
+
+    private List<string> words;
+
+
+    /*
+     * Aşağıda kelime üreten fonksiyonu internet üzerinde araştırıp case'e uygun şekle getirip kullandım.
+     */
+    private bool HaveWordInCurrentGame(string characters, ref bool stopFlag)
+    {
+        char[] charArray = characters.ToCharArray();
+        for (int i = 3; i <= charArray.Length; i++)
+        {
+            GetPermutations(charArray, i, 0, ref stopFlag);
+            if (stopFlag)
+            {
+                break;
+            }
+        }
+
+        return stopFlag;
+    }
+
+    private void GetPermutations(char[] charArray, int length, int index, ref bool stopFlag)
+    {
+        if (stopFlag)
+        {
+            return;
+        }
+
+        if (index == length)
+        {
+            if (AnswerHandler.IsStringInList(new string(charArray, 0,
+                    length))) //yazılan olasılık en listesinde varsa kelime üretmenin kesilmesi
+            {
+                stopFlag = true;
+                Debug.LogError(new string(charArray, 0, length));
+            }
+
+            return;
+        }
+
+        for (int i = index; i < charArray.Length; i++)
+        {
+            Swap(ref charArray[index], ref charArray[i]); //elemanların yerlerinin değiştirilmesi
+
+            GetPermutations(charArray, length, index + 1,
+                ref stopFlag); //geçerli dizi için yazılabilecek olasıklara bakılması
+
+            Swap(ref charArray[index], ref charArray[i]);
+
+            if (stopFlag)
+            {
+                return;
+            }
+        }
+    }
+
+    private void Swap(ref char a, ref char b)
+    {
+        (a, b) = (b, a);
+    }
 }
 
 public enum GameState
 {
-	None,
-	Playing,
-	Won,
-	
+    None,
+    Playing,
+    Won,
 }
