@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
             characterString += character;
         }
 
-        stopFlag = false;
-        if (!HaveWordInCurrentGame(characterString, ref stopFlag))
+        _stopFlag = false;
+        if (!HaveWordInCurrentGame(characterString, ref _stopFlag))
         {
             UpdateGameState(GameState.Won);
         }
@@ -76,15 +76,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stopFlag = false;
-        }
-    }
+    
 
-    private bool stopFlag = false;
+    private bool _stopFlag = false;
 
     private List<string> words;
 
@@ -106,21 +100,19 @@ public class GameManager : MonoBehaviour
 
         return stopFlag;
     }
-
+    
     private void GetPermutations(char[] charArray, int length, int index, ref bool stopFlag)
     {
         if (stopFlag)
         {
             return;
         }
-
         if (index == length)
         {
-            if (AnswerHandler.IsStringInList(new string(charArray, 0,
-                    length))) //yazılan olasılık en listesinde varsa kelime üretmenin kesilmesi
+            if (AnswerHandler.IsStringInList(new string(charArray, 0, length))) //yazılan olasılık en listesinde varsa kelime üretmenin kesilmesi
             {
                 stopFlag = true;
-                Debug.LogError(new string(charArray, 0, length));
+               // Debug.LogError(new string(charArray, 0, length));
             }
 
             return;

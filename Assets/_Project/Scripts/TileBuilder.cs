@@ -114,6 +114,29 @@ public class TileBuilder : MonoBehaviour
 
         return usefulChars.ToArray();
     }
+
+    public void AutoMove(string answer)
+    {
+        for (var i = 0; i < answer.Length; i++)
+        {
+           FindForBlow(answer[i]);
+        }
+        PlayerController.Instance.DoneButtonDown();
+    }
+
+    private void FindForBlow(char answer)
+    {
+        for (var j = 0; j < _tileObjects.Count; j++)
+        {
+            if (_tileObjects[j].TileObjectState == TileObjectState.Selectable && _tileObjects[j].TileChar ==answer)
+            {
+                PlayerController.Instance.AddPlacedObject(_tileObjects[j]);
+                //Debug.Log(_tileObjects[j].gameObject.name);
+                break;
+            }
+        }
+      
+    }
     
     
 }

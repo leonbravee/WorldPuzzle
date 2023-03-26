@@ -45,7 +45,22 @@ public class ScoreManager : MonoBehaviour
 		_currentScore += earnScore;
 		CanvasController.Instance.ShowScore(_currentScore);
 	}
-	
+
+	public int GetScore(string word)
+	{
+		int earnScore = 0;
+		for (int i = 0; i < word.Length; i++)
+		{
+			int jTarget = GetLetterScore(word[i]);
+			
+			for (int j = 0; j < jTarget; j++)
+			{
+				earnScore += 10;
+			}
+		}
+
+		return earnScore;
+	}
 
 	public void SaveScore()
 	{
