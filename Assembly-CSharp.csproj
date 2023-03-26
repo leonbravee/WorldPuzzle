@@ -62,7 +62,6 @@
      <Compile Include="Assets\_Project\Scripts\TileObject\TileObject.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\UserInput.cs" />
      <Compile Include="Assets\_Project\Scripts\Template\LeonMath.cs" />
-     <Compile Include="Assets\_Project\Scripts\Placement\PlaceSlot.cs" />
      <Compile Include="Assets\_Project\Scripts\GameManager.cs" />
      <Compile Include="Assets\_Project\Scripts\Placement\PlacementTrigger.cs" />
      <Compile Include="Assets\_Project\Scripts\Answer\AnswerLibrary.cs" />

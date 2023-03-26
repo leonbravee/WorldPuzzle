@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    /*
+     * Oyunun yönetici
+     * Oyunun bitmesi
+     * Level'in yönetilmesi
+     * Canvas'ın yönetilmesi gibi işlemleri yapar
+     * Oyunun bitip bitmediğini anlamak için kalan tilerlardan kelime çıkıp çıkmadığını kontrol eder
+     */
     public static GameManager Instance;
 
     void Awake()

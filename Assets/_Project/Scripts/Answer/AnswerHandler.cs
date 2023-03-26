@@ -36,12 +36,12 @@ public static class AnswerHandler
 		
 	}
 	
-	private static int LetterToId(char letter)
+	private static int LetterToId(char letter)//aschi tablosuna harflere id atanması
 	{
 		return  (int)letter-97;
 	}
 	
-	private static AnswerLibrary GetAnswerLibrary(int letterId)
+	private static AnswerLibrary GetAnswerLibrary(int letterId)//aranan harfin ilk harfine göre o harfle başlayanların listesinin elde edilmesi
 	{
 		if (_answerLibraries.Count - 1 < letterId)
 		{
@@ -53,7 +53,7 @@ public static class AnswerHandler
 		return _answerLibraries[letterId];
 	}
 
-	public static bool IsStringInList(string word)
+	public static bool IsStringInList(string word) // gelen string txt dosyasında var mı yok mu
 	{
 		if (word.Length < 3) return false;
 		

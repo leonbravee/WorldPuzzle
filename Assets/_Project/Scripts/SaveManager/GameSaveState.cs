@@ -5,6 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class GameSaveState
 {
+    
+    /*
+     * Basit bir kayıt sınıfı
+     * her level'in puanını ve en son oynanılan level'in index'ini tutar
+     */
     private List<int> _levelScores;
 
     private int _lastLevel;

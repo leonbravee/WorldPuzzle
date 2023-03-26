@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
 
 	private string _answerString;
 	
+	/*
+	 *Player'in sahip olduğu özellikleri yönetir
+	 * ekrana dokunma durumuna göre drag drop'u etkileştirir.
+	 * */
+	
 		
 	void Awake()
 	{

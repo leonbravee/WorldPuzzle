@@ -5,7 +5,11 @@ using UnityEngine;
      
 public class PlacementTrigger : MonoBehaviour
 {
-
+ /*
+  * Kendisine çarpan harfleri yerleştirildi sayar
+  * Boşta olan slota göre sırayla yerleştirir.
+  * Player tarafından yönetilir
+  */
     public static PlacementTrigger Instance;
 
     private void Awake()

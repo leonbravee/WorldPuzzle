@@ -3,7 +3,9 @@ using UnityEngine;
 [System.Serializable]
 public class Position
 {
-
+/*
+ * Json'dan gelen tile pozisyonlarının yönetilmesi için
+ */
     private float _x=0f;
 
     public float X

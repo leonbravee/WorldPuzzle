@@ -3,7 +3,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class TileLevelData
 {
-
+/*
+ * Jsondan gelen tile verilerinin tamamını tutar
+ */
     private int _id;
 
     public int Id

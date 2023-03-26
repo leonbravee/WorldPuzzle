@@ -5,6 +5,11 @@ using Newtonsoft.Json;
 
 public class TileBuilder : MonoBehaviour
 {
+    
+    /*
+     * Json dosyasından gelen veriye level içerisindeki tile'ların oluşturulması.
+     * Levelde kullanılan tilelar üzerinde yapılan işlemler için fonsiyonlar
+     */
     public static TileBuilder Instance;
 
     void Awake()

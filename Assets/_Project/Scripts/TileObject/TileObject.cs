@@ -7,10 +7,18 @@ using UnityEngine;
 
 public class TileObject : MonoBehaviour
 {
+    
+    /*
+     * Tile'ların yönetilmesini sağlar.
+     * Tile'ların durumlarını tutar.
+     * Gerektiğinde child tileları kullanıma açar.
+     */
     [SerializeField] 
     private TileObjectData _properties;
 
     private Vector3 _firstPos;
+    
+    
 
     public TileLevelData TileLevelData
     {

@@ -5,6 +5,10 @@ using UnityEngine;
      
 public class ScoreManager : MonoBehaviour
 {
+	/*
+	 * Anlık olarak oyundaki score'u tutar ve hesaplar
+	 * Hesaplanan score'u canvas üzerinde gösterir.
+	 */
 	public static ScoreManager Instance;
 
 	[SerializeField]

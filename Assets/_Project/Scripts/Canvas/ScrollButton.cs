@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ScrollButton : MonoBehaviour
 {
+    /*
+     * Üzerinde Taşıdığı level idsine göre ilgili level'in yüklenmesini sağlar
+     */
     [SerializeField]
     private int _levelId;
 
