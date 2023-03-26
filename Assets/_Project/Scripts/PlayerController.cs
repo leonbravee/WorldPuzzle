@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 		_placedObjects.Add(tileObject);
 		CanvasController.Instance.SetUndoButton();
 
-		_answerString += char.ToLower(tileObject.TileChar);;
+		_answerString += tileObject.TileChar;
 		SetAnswerString();
 	}
 
@@ -101,9 +101,13 @@ public class PlayerController : MonoBehaviour
 		_placedObjects.Clear();
 
 		PlacementTrigger.Instance.PlacedIndex = -1;
-		_answerString = "";
+		
+	    CanvasController.Instance.AddCorrectWord(_answerString);
 		CanvasController.Instance.SetUndoButton();
 		CanvasController.Instance.SetDoneButton(false);
+		GameManager.Instance.CheckIsGameEnd();
+
+			_answerString = "";
 	}
 
 

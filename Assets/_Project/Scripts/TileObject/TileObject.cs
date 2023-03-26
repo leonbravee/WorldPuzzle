@@ -25,7 +25,8 @@ public class TileObject : MonoBehaviour
     {
         get
         {
-           return _properties.TileLevelData.Character[0];
+            if (_properties.TileLevelData.Character[0] == 'I') return 'i';
+           return char.ToLower(_properties.TileLevelData.Character[0]);
         }
     }
 

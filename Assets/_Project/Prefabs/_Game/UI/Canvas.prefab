@@ -26,7 +26,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 962644482}
   - {fileID: 1435976685}
@@ -1763,6 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _properties:
     LevelTitleText: {fileID: 4244579890821832688}
+    CorrectAnswersText: {fileID: 4244579892380052918}
     UndoButtonObject: {fileID: 4244579891477531105}
     DoneButtonObject: {fileID: 4244579891602240547}
     MyAnimator: {fileID: 4244579892521513617}

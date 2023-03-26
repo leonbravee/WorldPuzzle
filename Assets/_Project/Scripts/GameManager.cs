@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
 	private GameState _gameState = GameState.None;
 
+	private int _currentLevelId;
+
 	public GameState GameState
 	{
 		get
@@ -33,11 +35,12 @@ public class GameManager : MonoBehaviour
 	public void StartGame(int levelId)
 	{
 		CanvasController.Instance.SetTrigger("Game_IN_OUT");
+		_currentLevelId = levelId;
 		TileBuilder.Instance.BuildLevel(levelId);
 		_gameState = GameState.Playing;
 	}
 
-	private int maxLength;
+	private int _maxLength;
 	private bool GenerateWords(char[] characters, string currentWord, int index, int maxLength)
 	{
 		if (index == maxLength)
@@ -62,12 +65,51 @@ public class GameManager : MonoBehaviour
 
 		return false;
 	}
+
+	public void  CheckIsGameEnd()
+	{
+		char[] characters = TileBuilder.Instance.GetUseFulTiles();
+		_maxLength = characters.Length;
+		if (_maxLength > 5)
+		{
+			Debug.Log("Game Will Continue");
+			return;
+		}
+		
+		foreach (char c in characters)
+		{
+			Debug.Log(c);
+		}
+	
+		if (GenerateWords(characters, "", 0, _maxLength))
+		{
+			Debug.Log("Game Will Continue");
+		}
+		else
+		{
+			Debug.Log("Game Done");
+			UpdateGameState(GameState.Won);
+		}
+	}
+
+	private void UpdateGameState(GameState gameState)
+	{
+		if(_gameState==GameState.Won) return;
+		
+		_gameState = gameState;
+
+		if (gameState == GameState.Won)
+		{
+			CanvasController.Instance.SetTrigger("OUT");
+			SaveManager.Instance.GameSaveState.LastLevel=(_currentLevelId+1);
+		}
+	}
 }
 
 public enum GameState
 {
 	None,
 	Playing,
-	End,
+	Won,
 	
 }

@@ -10,7 +10,9 @@ public class CanvasController : MonoBehaviour
 
 	[SerializeField]
 	private CanvasControllerData _properties;
-	
+
+	private List<string> _correctWords;
+
 	void Awake()
 	{
 		if(Instance == null)
@@ -32,6 +34,10 @@ public class CanvasController : MonoBehaviour
 	public void SetLevelTitle(string title)
 	{
 		_properties.LevelTitleText.text = title;
+		
+		_correctWords = new List<string>();
+		_correctWords.Add("Answers");	
+		_properties.CorrectAnswersText.text = "Answers";
 	}
 
 	public void SetUndoButton()
@@ -58,5 +64,26 @@ public class CanvasController : MonoBehaviour
 	public void SetTrigger(string trigger)
 	{
 		_properties.MyAnimator.SetTrigger(trigger);
+	}
+
+	public void AddCorrectWord(string word)
+	{
+		if(_correctWords.Contains(word)) return;
+
+		_correctWords.Add(word);
+		string text = "";
+		foreach (string correctWord in _correctWords)
+		{
+			text += correctWord + "\n";
+		}
+
+		_properties.CorrectAnswersText.text = text;
+	}
+
+	public void NextLevelButtonDown()
+	{
+		if(GameManager.Instance.GameState!=GameState.Won) return;
+		
+		GameManager.Instance.StartGame(SaveManager.Instance.GameSaveState.LastLevel);
 	}
 }

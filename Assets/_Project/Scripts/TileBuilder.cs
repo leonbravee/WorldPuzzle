@@ -25,6 +25,13 @@ public class TileBuilder : MonoBehaviour
     
     public void BuildLevel(int levelIndex)
     {
+        if ( _tileObjects!=null && _tileObjects.Count > 0)
+        {
+            foreach (TileObject tileObject in _tileObjects)
+            {
+                Destroy(tileObject);
+            }
+        }
         levelIndex++;
         _tileObjects = new List<TileObject>();
         string path = "Levels/level_"+levelIndex;
@@ -79,6 +86,20 @@ public class TileBuilder : MonoBehaviour
         }
 
         return null;
+    }
+
+    public char[] GetUseFulTiles()
+    {
+        List<char> usefulChars = new List<char>();
+        foreach (TileObject tileObject in _tileObjects)
+        {
+            if (tileObject.TileObjectState == TileObjectState.Selectable)
+            {
+                usefulChars.Add(tileObject.TileChar);
+            }
+        }
+
+        return usefulChars.ToArray();
     }
     
 }
